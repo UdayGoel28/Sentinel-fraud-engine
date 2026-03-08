@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Sentinel — real-time fraud detection command center with attack simulator, powered by a C++ rules engine." />
+  <title>Sentinel — Command Center</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ─── Scanline Overlay ─────────────────────────────────────── -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- ─── Header ───────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">
+        <span class="logo-icon">◆</span>
+        <h1>SENTINEL</h1>
+      </div>
+      <span class="header-subtitle">COMMAND CENTER</span>
+    </div>
+    <div class="header-right">
+      <div class="system-status" id="system-status">
+        <span class="status-dot"></span>
+        <span class="status-text">SYSTEM ACTIVE</span>
+      </div>
+      <div class="timestamp" id="header-time"></div>
+    </div>
+  </header>
+
+  <!-- ─── Stats Bar ────────────────────────────────────────────── -->
+  <section class="stats-bar" id="stats-bar">
+    <div class="stat-card stat-safe-card">
+      <span class="stat-value" id="stat-safe">0</span>
+      <span class="stat-label">APPROVED</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value" id="stat-total">0</span>
+      <span class="stat-label">THREATS BLOCKED</span>
+    </div>
+    <div class="stat-card stat-velocity">
+      <span class="stat-value" id="stat-velocity">0</span>
+      <span class="stat-label">VELOCITY</span>
+    </div>
+    <div class="stat-card stat-device">
+      <span class="stat-value" id="stat-device">0</span>
+      <span class="stat-label">DEVICE ANOMALY</span>
+    </div>
+    <div class="stat-card stat-ip">
+      <span class="stat-value" id="stat-ip">0</span>
+      <span class="stat-label">IP HOPPING</span>
+    </div>
+  </section>
+
+  <!-- ─── Control Panel ────────────────────────────────────────── -->
+  <section class="control-panel">
+    <div class="control-header">
+      <h2><span class="control-icon">▶</span> ATTACK SIMULATOR</h2>
+      <span class="control-subtitle">Test the C++ rules engine in real time</span>
+    </div>
+    <div class="control-buttons">
+      <button class="btn btn-safe" id="btn-normal" type="button">
+        <span class="btn-icon">✦</span>
+        Send Normal Transaction
+      </button>
+      <button class="btn btn-attack" id="btn-botnet" type="button">
+        <span class="btn-icon">⚡</span>
+        Simulate Botnet Attack
+      </button>
+      <button class="btn btn-clear" id="btn-clear" type="button">
+        <span class="btn-icon">✕</span>
+        Clear Feed
+      </button>
+    </div>
+  </section>
+
+  <!-- ─── Live Feed Table ──────────────────────────────────────── -->
+  <main class="main-panel">
+    <div class="panel-header">
+      <h2>
+        <span class="panel-icon">◉</span>
+        LIVE TRANSACTION FEED
+      </h2>
+      <span class="panel-badge" id="alert-count">0 EVENTS</span>
+    </div>
+
+    <div class="table-wrapper" id="table-wrapper">
+      <table class="alerts-table" id="alerts-table">
+        <thead>
+          <tr>
+            <th>STATUS</th>
+            <th>TXN ID</th>
+            <th>USER</th>
+            <th>RESULT</th>
+            <th>TIME</th>
+          </tr>
+        </thead>
+        <tbody id="alerts-body">
+          <!-- Rows injected by app.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Empty state -->
+    <div class="state-message" id="empty-state">
+      <span class="idle-icon">◇</span>
+      <p>Awaiting transactions. Use the Attack Simulator above.</p>
+    </div>
+  </main>
+
+  <!-- ─── Footer ───────────────────────────────────────────────── -->
+  <footer class="footer">
+    <span>SENTINEL ENGINE</span>
+    <span class="footer-separator">|</span>
+    <span>RULES: VELOCITY · DEVICE · IP HOP</span>
+    <span class="footer-separator">|</span>
+    <span>C++ BACKEND · NODE.JS API</span>
+  </footer>
+
+  <!-- ─── Red Flash Overlay (for botnet detection) ──────────────── -->
+  <div class="red-flash" id="red-flash" aria-hidden="true"></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

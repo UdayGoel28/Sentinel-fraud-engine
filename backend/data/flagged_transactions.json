@@ -1,0 +1,20 @@
+[
+  {
+    "transactionId": "TXN004",
+    "userId": "user_alpha",
+    "reason": "FRAUD: Velocity Limit Exceeded",
+    "timestamp": 1700000055
+  },
+  {
+    "transactionId": "TXN006",
+    "userId": "user_beta",
+    "reason": "FRAUD: Suspicious IP Hop",
+    "timestamp": 1700000130
+  },
+  {
+    "transactionId": "TXN008",
+    "userId": "user_gamma",
+    "reason": "FRAUD: Device Anomaly",
+    "timestamp": 1700000260
+  }
+]

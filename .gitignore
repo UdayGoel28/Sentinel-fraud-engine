@@ -1,0 +1,14 @@
+# Ignore Node.js software and dependencies
+.local/
+api/node_modules/
+node_modules/
+
+# Ignore C++ Compiled Binaries
+sentinel
+fraud_engine
+*.exe
+*.o
+*.out
+
+# Ignore Mac system files
+.DS_Store
