@@ -35,3 +35,10 @@ Instead of spinning up a new C++ instance for every request (which wipes memory 
 +-------------------------+
 | C++ Daemon (Persistent) |
 +-------------------------+
+
+**Launch the Attack Simulator (Dashboard)**
+The frontend is built with pure HTML/CSS/JS. You can launch it in two ways:
+* Option A:  Simply locate the `frontend/index.html` file in your computer's file explorer and double-click it to open it directly in your browser.
+* Option B:  (Recommended):** Use a tool like VS Code's "Live Server" extension to serve the `frontend` folder (typically opens at `http://127.0.0.1:5500`).
+
+Once the dashboard is open, click **"Simulate Botnet Attack"** and watch the C++ engine catch the velocity anomalies and block the transactions in real-time!
